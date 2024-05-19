@@ -2,7 +2,7 @@
 const siteMetadata = {
   title: 'Cosmin Blog',
   author: 'Cosmin Gombos',
-  headerTitle: 'Blog',
+  headerTitle: 'Urban Explorers',
   description: 'A blog created with Next.js and Tailwind.css',
   language: 'en-us',
   theme: 'light', // system, dark or light
