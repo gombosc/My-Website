@@ -1,9 +1,9 @@
 /** @type {import("pliny/config").PlinyConfig } */
 const siteMetadata = {
-  title: 'Cosmin Blog',
+  title: 'Blog',
   author: 'Cosmin Gombos',
-  headerTitle: 'Urban Explorers',
-  description: 'A blog created with Next.js and Tailwind.css',
+  headerTitle: 'Cosmin Gombos',
+  description: 'A digital space for my thoughts and ideas.',
   language: 'en-us',
   theme: 'light', // system, dark or light
   siteUrl: 'https://tailwind-nextjs-starter-blog.vercel.app',
