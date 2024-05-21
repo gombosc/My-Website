@@ -5816,6 +5816,26 @@ __metadata:
   languageName: node
   linkType: hard
 
+"framer-motion@npm:^11.2.5":
+  version: 11.2.5
+  resolution: "framer-motion@npm:11.2.5"
+  dependencies:
+    tslib: ^2.4.0
+  peerDependencies:
+    "@emotion/is-prop-valid": "*"
+    react: ^18.0.0
+    react-dom: ^18.0.0
+  peerDependenciesMeta:
+    "@emotion/is-prop-valid":
+      optional: true
+    react:
+      optional: true
+    react-dom:
+      optional: true
+  checksum: 5df38e3ffd0bb8e567aebf53484c6f1a1407f1d2aeaf5849f9ccfd794bb2c272846def5a9ee983938d5c800174e4fffb3645d725b6964ccac13169a732949fa9
+  languageName: node
+  linkType: hard
+
 "fs-minipass@npm:^2.0.0":
   version: 2.1.0
   resolution: "fs-minipass@npm:2.1.0"
@@ -10415,6 +10435,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"scroll-provider@npm:^0.0.5":
+  version: 0.0.5
+  resolution: "scroll-provider@npm:0.0.5"
+  checksum: d2f6ca9aa18e47dbdb5a2b0e6b9c10537aed00f8523e72f8dd3a53076d6e2c575df494ad03725f951c083e3b9e445149dfa87d6085bffd0b38ba99a1d2f398e3
+  languageName: node
+  linkType: hard
+
 "section-matter@npm:^1.0.0":
   version: 1.0.0
   resolution: "section-matter@npm:1.0.0"
@@ -10953,6 +10980,7 @@ __metadata:
     eslint-config-next: 14.1.0
     eslint-config-prettier: ^8.8.0
     eslint-plugin-prettier: ^5.0.0
+    framer-motion: ^11.2.5
     github-slugger: ^2.0.0
     gray-matter: ^4.0.2
     husky: ^8.0.0
@@ -10977,6 +11005,7 @@ __metadata:
     remark: ^14.0.2
     remark-gfm: ^3.0.1
     remark-math: ^5.1.1
+    scroll-provider: ^0.0.5
     tailwindcss: ^3.4.1
     typescript: ^5.1.3
     unist-util-visit: ^4.1.0
