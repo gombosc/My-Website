@@ -1,0 +1,11 @@
+.posts_background {
+	background-color: white;
+	background-size: cover;
+	background-position: center;
+	position: absolute;
+	width: auto;
+	min-height: 100vh;
+	height: 100vh;
+	left: 0;
+	right: 0;
+  }

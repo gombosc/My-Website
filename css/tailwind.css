@@ -10,6 +10,10 @@
   @apply list-none;
 }
 
+html::-webkit-scrollbar {
+	display: none;
+  }
+
 .footnotes {
   @apply mt-12 border-t border-gray-200 pt-8 dark:border-gray-700;
 }
@@ -21,6 +25,38 @@
 .csl-entry {
   @apply my-5;
 }
+
+.underline-magical {
+	@apply bg-gradient-to-r from-primary-500 to-primary-500 bg-no-repeat dark:text-gray-200
+	no-underline [background-position:0_100%]
+	[background-size:100%_0.15em] focus:[background-size:100%_100%]
+	hover:[background-size:100%_100%] motion-safe:transition-all
+	motion-safe:duration-200 dark:from-primary-500 dark:to-primary-500;
+}
+
+.horizontal-underline {
+	border-bottom-width: 0;
+	background-image: linear-gradient(transparent, transparent), linear-gradient(#e47d08, #e47d08);
+	background-size: 0 1px;
+	background-position: 0 100%;
+	background-repeat: no-repeat;
+	transition: background-size 0.5s ease-in-out;
+  }
+  
+  .horizontal-underline:hover {
+	background-size: 100% 3px;
+	background-position: 0 100%;
+  }
+  
+  .horizontal-underline-active {
+	background-size: 100% 3px;
+	background-position: 0 100%;
+  }
+  
+  #nprogress .bar {
+	background: #de1d8d !important;
+	height: 4px !important;
+  }
 
 /* https://stackoverflow.com/questions/61083813/how-to-avoid-internal-autofill-selected-style-to-be-applied */
 input:-webkit-autofill,
