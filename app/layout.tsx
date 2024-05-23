@@ -73,19 +73,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fff" />
       <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000" />
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
-	  <body className="bg-white text-black antialiased dark:dark-bg dark:text-white sm:dark-bg xl:dark-bg" >
-		{/* <body className="bg-scroll text-black antialiased dark:bg-gradient-to-r from-black to-gray-900 dark:text-white" 
-	  		 style={{
-			  backgroundImage: `var(--bg-image)`,
-			  backgroundSize: 'cover', 
-			  backgroundPosition: 'center',
-			  backgroundAttachment: 'scroll',
-			  backgroundRepeat: 'no-repeat',
-			  transition: 'background-image 0.5s ease',
-			  color: `var(--text-color-light), var(--text-color-dark)`,
-			  backgroundColor: `var(--bg-color-light), var(--bg-color-dark)`,
-			}}
-	  > */}
+	  <body className="bg-scroll text-black antialiased dark:bg-gradient-to-r from-black to-gray-900 dark:text-white" 
+	  > 
         <ThemeProviders>
           <Analytics analyticsConfig={siteMetadata.analytics as AnalyticsConfig} />
           <SectionContainer>

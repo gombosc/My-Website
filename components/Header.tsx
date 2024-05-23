@@ -32,7 +32,7 @@ return (
 					<Link
 						key={link.title}
 						href={link.href}
-						className="hidden horizontal-underline text-base font-extrabold sm:block"
+						className="hidden font-increase-effect horizontal-underline text-base font-extrabold sm:block"
 					>
 						{link.title}
 					</Link>

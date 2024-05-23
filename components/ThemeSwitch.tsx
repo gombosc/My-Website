@@ -2,6 +2,11 @@
 
 import { useEffect, useState } from 'react'
 import { useTheme } from 'next-themes'
+import Image from 'next/image'
+
+
+const darkBackground = '/static/bg/francesco_ungaro.jpg'
+const lightBackground = '/static/bg/hyunwon_jang.jpg'
 
 const ThemeSwitch = () => {
   const [mounted, setMounted] = useState(false)
@@ -14,7 +19,10 @@ const ThemeSwitch = () => {
     return null
   }
 
+  const imageUrl = theme === 'dark' || resolvedTheme === 'dark' ? darkBackground : lightBackground;
+
   return (
+	<div className="theme-switch">
     <button
       aria-label="Toggle Dark Mode"
       onClick={() => setTheme(theme === 'dark' || resolvedTheme === 'dark' ? 'light' : 'dark')}
@@ -36,6 +44,10 @@ const ThemeSwitch = () => {
         )}
       </svg>
     </button>
+	<div className="bg-image bg-style">
+		<Image src={imageUrl} alt="Background" layout="fill" objectFit="cover"/>
+	</div>
+	</div>
   )
 }
 

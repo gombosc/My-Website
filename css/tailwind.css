@@ -27,16 +27,16 @@ html::-webkit-scrollbar {
 }
 
 .underline-magical {
-	@apply bg-gradient-to-r from-primary-500 to-primary-500 bg-no-repeat dark:text-gray-200
+	@apply bg-gradient-to-r from-red-600 to-red-600 bg-no-repeat dark:text-gray-200
 	no-underline [background-position:0_100%]
 	[background-size:100%_0.15em] focus:[background-size:100%_100%]
 	hover:[background-size:100%_100%] motion-safe:transition-all
-	motion-safe:duration-200 dark:from-primary-500 dark:to-primary-500;
+	motion-safe:duration-300 dark:from-red-600 dark:to-red-600;
 }
 
 .horizontal-underline {
 	border-bottom-width: 0;
-	background-image: linear-gradient(transparent, transparent), linear-gradient(#e47d08, #e47d08);
+	background-image: linear-gradient(transparent, transparent), linear-gradient(#E60026, #E60026);
 	background-size: 0 1px;
 	background-position: 0 100%;
 	background-repeat: no-repeat;
@@ -54,7 +54,7 @@ html::-webkit-scrollbar {
   }
   
   #nprogress .bar {
-	background: #de1d8d !important;
+	background: #E60026 !important;
 	height: 4px !important;
   }
 
@@ -69,3 +69,13 @@ input:-webkit-autofill:focus {
 .katex-display {
   overflow: auto hidden;
 }
+
+.bg-style {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: -1; /* Optional for extra control over stacking order */
+  }
+  

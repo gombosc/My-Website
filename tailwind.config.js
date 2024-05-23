@@ -17,7 +17,7 @@ module.exports = {
     extend: {
 		backgroundImage: (theme) => ({
 			'dark-bg': "url('/public/static/bg/francesco_ungaro.jpg')",  // Dark mode image
-			'light-bg': "url('public/static/bg2/hyunwon_jang.jpg)",  // Light mode image
+			'light-bg': "url('public/static/bg2/hyunwon_jang.jpg')",  // Light mode image
 		  }),
       lineHeight: {
         11: '2.75rem',

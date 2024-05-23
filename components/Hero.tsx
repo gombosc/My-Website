@@ -39,19 +39,19 @@ export default function Hero(): ReactElement {
                 href="/blog"
                 className="underline-magical text-md p-3 w-max sm:text-lg md:text-xl xl:text-2xl"
               >
-                Read my blog &rarr;
+                Read my blog
               </Link>
 			  <Link
                 href="/projects"
                 className="underline-magical text-md p-3 w-max cursor-pointer sm:text-lg md:text-xl xl:text-2xl"
               >
-                My projects &rarr;
+                My projects
               </Link>
 			  <Link
                 href="/about"
                 className="underline-magical text-md p-3 w-max cursor-pointer sm:text-lg md:text-xl xl:text-2xl"
               >
-            	About me &rarr;
+            	About me
               </Link>
             </div>
           </div>
