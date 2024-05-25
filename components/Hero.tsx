@@ -1,27 +1,11 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { ReactElement, useContext, useEffect, useRef } from 'react';
-// import { HiOutlineArrowNarrowDown } from 'react-icons/hi';
-// import { ScrollContext } from './Providers/ScrollProvider';
-// import { renderCanvas } from './renderCanvas';
-
 
 export default function Hero(): ReactElement {
   const ref = useRef<HTMLHeadingElement>(null);
 //   const { scrollY } = useContext(ScrollContext);
-
-  let progress = 0;
-  const { current: elContainer } = ref;
-
-  if (elContainer) {
-    progress = Math.min(1, scrollY / elContainer.clientHeight);
-  }
-
-//   useEffect(() => {
-//     renderCanvas();
-//   }, []);
 
   return (
     <div>

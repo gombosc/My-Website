@@ -6,6 +6,7 @@ import siteMetadata from '@/data/siteMetadata'
 import { formatDate } from 'pliny/utils/formatDate'
 import NewsletterForm from 'pliny/ui/NewsletterForm'
 import { Main } from 'next/document'
+import MobileNav from '@/components/MobileNav'
 
 export default function Home({ posts }) {
 return (

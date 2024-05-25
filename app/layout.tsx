@@ -86,7 +86,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <Footer />
             </div>
           </SectionContainer>
-		  
         </ThemeProviders>
       </body>
     </html>

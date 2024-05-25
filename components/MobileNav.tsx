@@ -1,11 +1,12 @@
 'use client'
-
+import {useRouter, usePathname} from 'next/navigation';
 import { useState } from 'react'
 import Link from './Link'
 import headerNavLinks from '@/data/headerNavLinks'
 
 const MobileNav = () => {
   const [navShow, setNavShow] = useState(false)
+  const pathName = usePathname()
 
   const onToggleNav = () => {
     setNavShow((status) => {
@@ -18,6 +19,8 @@ const MobileNav = () => {
       return !status
     })
   }
+
+  
 
   return (
     <>
@@ -36,7 +39,7 @@ const MobileNav = () => {
         </svg>
       </button>
       <div
-        className={`fixed left-0 top-0 z-10 h-full w-full transform bg-white opacity-95 duration-300 ease-in-out dark:bg-gray-950 dark:opacity-[0.98] ${
+        className={`fixed left-0 top-0 z-20 h-full w-full transform bg-white  duration-300 ease-in-out dark:bg-black dark:opacity-[0.98] ${
           navShow ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
@@ -58,10 +61,11 @@ const MobileNav = () => {
         </div>
         <nav className="fixed mt-8 h-full">
           {headerNavLinks.map((link) => (
-            <div key={link.title} className="px-12 py-4">
+            <div key={link.title} className="px-5 py-5">
               <Link
                 href={link.href}
-                className="text-2xl font-bold tracking-widest text-gray-900 dark:text-gray-100"
+				className={`text-3xl font-bold tracking-widest text-gray-900 dark:text-gray-100 ${
+					pathName === link.href ? 'underline-magical' : ''}`}
                 onClick={onToggleNav}
               >
                 {link.title}
