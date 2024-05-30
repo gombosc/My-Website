@@ -25,7 +25,7 @@ return (
 				</div>
 			</Link>
 		</div>
-		<div className="flex items-stretch space-x-5 leading-9 sm:space-x-3">
+		<div className="flex items-center space-x-5 leading-2 sm:space-x-3">
 			{headerNavLinks
 				.filter((link) => link.href !== '/')
 				.map((link) => (

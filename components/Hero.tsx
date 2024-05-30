@@ -1,7 +1,8 @@
 'use client';
 
-import Link from 'next/link';
-import { ReactElement, useContext, useEffect, useRef } from 'react';
+import Typewriter from 'typewriter-effect'
+import Link from 'next/link'
+import { ReactElement, useContext, useEffect, useRef } from 'react'
 
 export default function Hero(): ReactElement {
   const ref = useRef<HTMLHeadingElement>(null);
@@ -17,7 +18,13 @@ export default function Hero(): ReactElement {
                 Cosmin
               </h1>
               <h2 className="text-3xl font-medium opacity-80 sm:text-6xl md:text-6xl xl:text-7xl">
-                I build things for the web.
+              <Typewriter
+              options={{
+              strings: ['I build things for the web', 'I write stuff', 'I run marathons'],
+              autoStart: true,
+              loop: true,
+              }}
+              />
               </h2>
               <Link
                 href="/blog"

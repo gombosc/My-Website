@@ -2,11 +2,11 @@ import Image from './Image'
 import Link from './Link'
 
 const Card = ({ title, description, imgSrc, href }) => (
-  <div className="md max-w-[544px] p-4 md:w-1/2">
+  <div className="md color max-w-[544px] p-4 md:w-1/2">
     <div
       className={`${
         imgSrc && 'h-full'
-      }  overflow-hidden rounded-md border-2 border-gray-200 border-opacity-60 dark:border-gray-700`}
+      }  overflow-hidden rounded-md border-2 border-gray-300 border-opacity-30 bg-gray-100 bg-opacity-90 dark:bg-black shadow-lg transition-transform transform hover:scale-105`}
     >
       {imgSrc &&
         (href ? (
@@ -38,7 +38,7 @@ const Card = ({ title, description, imgSrc, href }) => (
             title
           )}
         </h2>
-        <p className="prose mb-3 max-w-none text-gray-500 dark:text-gray-400">{description}</p>
+        <p className="prose mb-3 max-w-none text-gray-800 dark:text-gray-200">{description}</p>
         {href && (
           <Link
             href={href}
