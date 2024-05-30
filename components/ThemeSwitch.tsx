@@ -3,10 +3,15 @@
 import { useEffect, useState } from 'react'
 import { useTheme } from 'next-themes'
 import Image from 'next/image'
+import { useContext } from 'react'
+import { LogoContext } from './LogoContext'
 
 
 const darkBackground = '/static/bg/francesco_ungaro.jpg'
 const lightBackground = '/static/bg/hyunwon_jang.jpg'
+
+const darkLogo = '/static/logo/6.png'
+const lightLogo = '/static/logo/5.png'
 
 const ThemeSwitch = () => {
   const [mounted, setMounted] = useState(false)
@@ -15,11 +20,15 @@ const ThemeSwitch = () => {
   // When mounted on client, now we can show the UI
   useEffect(() => setMounted(true), [])
 
+  const { updateLogoUrl } = useContext(LogoContext);
+
   if (!mounted) {
     return null
   }
 
   const imageUrl = theme === 'dark' || resolvedTheme === 'dark' ? darkBackground : lightBackground;
+  const logoUrl = theme === 'dark' || resolvedTheme === 'dark' ? darkLogo : lightLogo;
+  updateLogoUrl(logoUrl); // Update context on theme change
 
   return (
 	<div className="theme-switch">
@@ -31,7 +40,7 @@ const ThemeSwitch = () => {
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 20 20"
         fill="currentColor"
-        className="h-6 w-6 text-gray-900 dark:text-gray-100"
+        className="h-6 w-6 text-black dark:text-white"
       >
         {mounted && (theme === 'dark' || resolvedTheme === 'dark') ? (
           <path
@@ -44,11 +53,14 @@ const ThemeSwitch = () => {
         )}
       </svg>
     </button>
-	<div className="bg-image bg-style">
-		<Image src={imageUrl} alt="Background" layout="fill" objectFit="cover"/>
+	<div className="bg-image bg-style" >
+		<Image src={imageUrl} alt="Background" layout="fill" objectFit="cover" />
 	</div>
+
 	</div>
   )
+  
 }
+
 
 export default ThemeSwitch

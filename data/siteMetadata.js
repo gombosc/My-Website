@@ -2,7 +2,7 @@
 const siteMetadata = {
   title: 'Blog',
   author: 'Cosmin Gombos',
-  headerTitle: 'Cosmin Gombos',
+  headerTitle: '',
   description: 'A digital space for my thoughts and ideas.',
   language: 'en-us',
   theme: 'light', // system, dark or light

@@ -10,6 +10,7 @@ import Footer from '@/components/Footer'
 import siteMetadata from '@/data/siteMetadata'
 import { ThemeProviders } from './theme-providers'
 import { Metadata } from 'next'
+import { LogoProvider } from '@/components/LogoContext'
 
 const space_grotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -59,6 +60,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
+	<LogoProvider>
     <html
       lang={siteMetadata.language}
       className={`${space_grotesk.variable} scroll-smooth`}
@@ -89,5 +91,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </ThemeProviders>
       </body>
     </html>
+	</LogoProvider>
   )
 }
