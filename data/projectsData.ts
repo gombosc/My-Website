@@ -20,6 +20,12 @@ const projectsData: Project[] = [
     imgSrc: '/static/images/time-machine.jpg',
     href: '/blog/the-time-machine',
   },
+  {
+  title: 'A next.js website',
+  description: `A personal website built with Next.js and Tailwind CSS. It's a simple and clean design that is fully responsive and easy to customize.`,
+  imgSrc: '/static/bg/mathew_macquarrie.jpg',
+  href: '/blog/the-time-machine',
+  },
 ]
 
 export default projectsData

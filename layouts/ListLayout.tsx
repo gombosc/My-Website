@@ -46,7 +46,7 @@ function Pagination({ totalPages, currentPage }: PaginationProps) {
           {currentPage} of {totalPages}
         </span>
         {!nextPage && (
-          <button className="cursor-auto disabled:opacity-50" disabled={!nextPage}>
+          <button className="cursor-auto disabled:opacity-50 " disabled={!nextPage}>
             Next
           </button>
         )}
