@@ -46,15 +46,15 @@ export default function Resources(){
 				<h2 className='text-2xl font-extrabold leading- tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14'>
 					Top Books
 				</h2>
-				<div className="container py-12">
+				<div className="container py-5">
 				{categories.map((category) => (
 					<div key={category.name}>
 						<details open={isListVisible}>
-						<summary className="cursor-pointer text-2xl font-extrabold leading- tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14 p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+						<summary className="cursor-pointer text-2xl font-extrabold leading- tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14 xl:text-3xl p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
 							{category.name}
 						</summary>
 						{category.content && (
-							<ul className="list-disc pl-4">
+							<ul className="list-disc pt-8 pb-8 pl-10">
 								{category.content.map((item) => (
 									<li key={item} className="text-lg leading-7 text-gray-800 dark:text-gray-200">
 										{item}
