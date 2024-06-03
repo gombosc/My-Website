@@ -3,7 +3,7 @@
 import siteMetadata from '@/data/siteMetadata'
 import headerNavLinks from '@/data/headerNavLinks'
 import { useContext } from 'react'
-import { LogoContext } from './LogoContext'; 
+import { LogoContext } from './LogoContext'
 import { useTheme } from 'next-themes'
 import { useEffect } from 'react'
 import Link from './Link'
