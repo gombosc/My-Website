@@ -46,4 +46,6 @@ Main Inspiration: <a href="https://www.dalelarroder.com/">Dale Larroder Website<
   
 - Add reaction button
 
+- Add more resources
+
 
