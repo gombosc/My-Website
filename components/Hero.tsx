@@ -20,7 +20,8 @@ export default function Hero(): ReactElement {
               <h2 className="text-4xl font-medium opacity-80 sm:text-6xl md:text-6xl xl:text-7xl">
               <Typewriter
               options={{
-              strings: ['I build things', 'I write stuff', 'I run marathons'],
+              // strings: ['I build things', 'I write stuff', 'I run marathons'],
+              strings: ['Coding by day', 'Writing by night', 'Athlete by heart', 'Dreamer by nature'],
               autoStart: true,
               loop: true,
               }}
