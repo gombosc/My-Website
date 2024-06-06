@@ -3,8 +3,9 @@
 import { genPageMetadata } from 'app/seo'
 import React, {useState, useEffect} from 'react';
 import { categories } from '@/data/bookLists';
+import { metadata } from '@/data/resourcesMetadata'
 
-export const metadata = genPageMetadata({ title: 'Resources' })
+export { metadata }
 
 export default function Resources(){
 	const [isListVisible, setIsListVisible] = useState(false);
