@@ -1,7 +1,7 @@
 import { genPageMetadata } from 'app/seo'
 import React from 'react';
-import { categories } from 'data/bookLists';
-import CategoryList from 'components/categoryList';
+import { categories } from '@/data/bookLists';
+import CategoryList from '@/components/categoryList';
 
 export const metadata = genPageMetadata({ title: 'Projects' })
 

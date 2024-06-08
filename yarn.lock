@@ -4818,7 +4818,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"contentlayer@npm:^0.3.4":
+"contentlayer@npm:^0.3.4, contentlayer@npm:latest":
   version: 0.3.4
   resolution: "contentlayer@npm:0.3.4"
   dependencies:
@@ -11493,7 +11493,7 @@ __metadata:
     "@typescript-eslint/eslint-plugin": ^6.1.0
     "@typescript-eslint/parser": ^6.1.0
     autoprefixer: ^10.4.13
-    contentlayer: ^0.3.4
+    contentlayer: latest
     cross-env: ^7.0.3
     esbuild: 0.18.11
     eslint: ^9.4.0
