@@ -1,6 +1,6 @@
 'use client'
 
-import siteMetadata from '@/data/siteMetadata'
+import siteMetadata from '@/data/siteMetadata.mjs'
 import headerNavLinks from '@/data/headerNavLinks'
 import { useContext } from 'react'
 import { LogoContext } from './LogoContext'

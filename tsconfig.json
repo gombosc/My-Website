@@ -40,6 +40,6 @@
     ".contentlayer/generated",
     ".contentlayer/generated/**/*.json",
     ".next/types/**/*.ts"
-  ],
+, "scripts/rss.mjs", "postcss.config.js", "next.config.mjs", "next.config.mjs", "next.config.mjs", "contentlayer.config.cts", "postcss.config.js"  ],
   "exclude": ["node_modules"]
 }

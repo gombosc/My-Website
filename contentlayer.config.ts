@@ -20,7 +20,7 @@ import rehypeCitation from 'rehype-citation'
 import rehypePrismPlus from 'rehype-prism-plus'
 import rehypePresetMinify from 'rehype-preset-minify'
 import { allCoreContent, sortPosts } from 'pliny/utils/contentlayer.js'
-import siteMetadata from './data/siteMetadata'
+import siteMetadata from './data/siteMetadata.mjs'
 
 const root = process.cwd()
 const isProduction = process.env.NODE_ENV === 'production'

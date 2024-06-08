@@ -1,6 +1,6 @@
 'use client';
 import { formatDate } from 'pliny/utils/formatDate'
-import siteMetadata from '@/data/siteMetadata'
+import siteMetadata from '@/data/siteMetadata.mjs'
 import Link from '@/components/Link'
 import Tag from '@/components/Tag'
 import styles from './MainPosts.module.css'
