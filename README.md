@@ -49,3 +49,7 @@ Main Inspiration: <a href="https://www.dalelarroder.com/">Dale Larroder Website<
 - Add more resources
 
 
+# Notes 
+Contentlayer is not fully supported on Windows so it created a scheme url error when launched with build mode. The Rss and postbuild had to be changed, plus the next config file extension. Added a custom check in rss when the page array might be empty so that it doesn't throw an error with contentlayer and stops the deployment process. This error was the most annoying error since the start of the project
+
+
