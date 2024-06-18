@@ -1,4 +1,5 @@
 import { sortPosts, allCoreContent } from 'pliny/utils/contentlayer'
+import { Analytics } from "@vercel/analytics/react"
 import { allBlogs } from 'contentlayer/generated'
 import MainComponent from './Main'
 
