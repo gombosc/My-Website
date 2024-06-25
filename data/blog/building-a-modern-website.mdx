@@ -1,0 +1,134 @@
+---
+title: 'Building My Website With Next.js'
+date: '2024-06-20'
+tags: ['coding']
+draft: false
+summary: Exploring the journey of building a personal website using a modern framework named Next.js, detailing the steps, challenges, and the lessons learned along the way.  
+---
+
+In a previous article, I wrote about the fun journey of building your own website. Back then, I underlined 4 crucial steps for stetting up a new project:
+
+    1) Defining the purpose
+
+    2) Technical Foundation
+
+    3) Design
+
+    4) Building, Testing & Launch
+
+At the beginning of this year, I reached the final step of the process: building the actual website. I chose to use Next.js as a framework and looked for a starter template on their platform. I then went on to consider the main features of the website, determining what was essential from the start and what could be added later on, so that I will not get lost in decisions again.
+
+**A simple layout:**
+
+    - Main Page
+
+    - Articles
+
+    - Projects
+
+    - Resources
+
+    - About
+
+
+I searched for an appropriate template and found one created by Timothy Lin, called Tailwind CSS Blog. It uses the latest version of React Server Component, Typescript, Contentlayer to manage markdown content (mdx), and Tailwind for CSS. I had no prior experience with any of these so the experience should be fun. The template was pretty straightforward and included a well-functioning light/dark mode. Besides, it was lightning fast.
+![tailwind template](/static/posts/tailwind.png)
+
+Everything was planned in January, but then life suddenly happened again. My plan to launch the website by the end of February was once again, delayed. Instead, I attended an intensive C bootcamp at the 42 Coding School for a month. I received an offer to continue my studies there, so I found myself writing C libraries instead of Javascript code. Months passed, other stuff happened. I joined an innovation program, which further delayed my website. Time flew, and my project was put on hold. This might be a process many may find familiar.
+
+# Back to Design
+
+The middle of May brought a small break. I finally decide to revisit the website, but this time I decide on creating a schedule. I give myself two weeks to get it live, no exceptions, no excuses. With the deadline set, I return to my project, importing everything to a new Linux environment. Unsurprisingly, new dependencies errors appear immediately. Great start!
+
+I also quickly realize that I need to return to step number 3, design. What was the initial design vision I had?
+
+For inspiration, I took a look at popular blogs that I follow, such as the following:
+- [Tim Ferris](https://tim.blog/tim-ferriss-books/)
+- [Zen Habits](https://zenhabits.net/)
+- [James Clear](https://jamesclear.com/)
+- [Naval](https://nav.al/)
+- [Seth Godin](https://seths.blog/)
+- [Buster Benson](https://busterbenson.com/about)
+
+# Creative Possibilities
+I initially had a vague idea of what I was looking for but was uncertain about the overall design. I was looking for a simple yet beautiful design, with a unique touch. This led me to delve a bit deeper in search of inspiration. Soon enough, I came across the [Unseen Studio](https://unseen.co/) website. Despite its unique experience, there was no way to build that. [Patrick’s Heng](https://patrickheng.com/) had an impressive website, but yet again, it was beyond my current skills. [Gergely Gizella](https://logartis.info/) also showcased promising potential in creative design, offering a perspective of what is creatively possible.
+
+Years later, I stumbled upon a website - [Keita Yamada's](https://p5aholic.me/) website - that was similar to what I was initially envisioning, simple yet elegant. I began researching about the process of creating something similar and soon learnt about [Three.js](https://threejs.org/). Although I loved the projects, learning it to create a similar website would have taken way longer than the two weeks I initially scheduled, as it required learning about 3D graphics and WebGL. I decided to abandon that idea and return to a simpler approach, akin to the initial Next template, which I could actually finish within the deadline.
+
+![Keita Yamada's Website](/static/posts/keta.png)
+
+# Step 4 - Building
+I go back to the website and decide it’s time to actually write code. I make a simple sketch for the overall layout and start working. I freshen up a bit on React and Next, read about Tailwind, and brush up on Typescript. I try to focus on the tasks at hand so that I meet the deadline, try to free my schedule and spend my free time coding.
+
+**The tasks:**
+
+    - Build custom home / navbar
+
+    - Choose color scheme
+
+    - Custom background / icons for light & dark theme
+
+    - Add Projects / About / Resources /Articles
+
+    - Update and enhance UI /UX
+
+    - Mobile Optimization
+
+    - Server rendering optimization
+
+    - Animation for light / dark theme icon
+
+    - Learn Contentlayer
+
+    - Enable comments and like function
+
+    - Add newsletter function
+
+    - Add custom logo for light & dark mode
+
+    - Add analytics
+
+    - Buy domain
+
+    - Fix last bugs
+
+    - Deploy on Vercel
+
+# Home Page / Navbar
+
+The first task was to build the home page. Initially, I considered adding article posts to it but I later decided to keep them on the Articles page for a cleaner look. Then, for the main page, I opted to add two headers and three links, aiming for a very minimalist aesthetic. To make the page more engaging, I added a typewriter effect to one of the headers.
+
+As for the navbar, after experimenting with different styles, I chose to go with a simple design. I created versions for both desktop and mobile, keeping the minimalist design in mind. I also added a custom animation to the menu links after trying various styles, settling on an underline that appears when hovered over.
+
+# Color Scheme
+
+For the color scheme, I was fixated on a black and white aesthetic. I used coolors to experiment with various color palettes and eventually chose red for its strong contrast and impact on first-time visitors. The creation of custom backgrounds was time consuming as I wanted them to look good on both desktop and mobile platforms, while also being subtle but not plain.
+
+The most challenging part was finding images that complemented each other well for the dark and light modes. I admit I may have spent a bit too much time selecting those two pictures. This led to the subsequent issue of having to rewrite the code for the light and dark themes so that they load two different pictures based on the users selected state. This process was more time-consuming and problematic than I initially considered.
+
+# Pages & Mobile Optimization
+
+After being done with the custom light and dark themes, I went on to adding the remaining pages. Except for the Resource pages, the template provided the rest. I personalized the pages and made some small tweaks, particularly to the Projects page. I created the Resources page from scratch, which is a static page featuring book recommendations and other useful information I've gathered over the years. Initially, I designed it as a client-side page, but later decided to render it server-side as a component. This caused a conflict with the page metadata for SEO optimization, which required a workaround. I also considered adding a guestbook page for users to leave comments or custom signatures and a newsletter, but It would have just taken too much time. They will be added in future updates.
+
+Finally, the website was somewhat functional, especially on desktop. I just had to adjust some components based on the screen size, using Tailwind properties like "sm", "md", or "lg". I then optimized the navbar and other pages for mobile, and made small UI/UX improvements. After spending hours resizing containers, I felt satisfied with the outcome. Still feeling productive, I added custom animations to the light and dark theme icons, adding rotation and reduction effects.
+
+The final tasks involved implementing the comments and like functions. Initially, I chose Giscus for its simplicity, despite it only allowing users with a GitHub account to leave comments. I spent some time trying to find a solution but decided to address it later, after I successfully launched the website on Vercel (if it would ever happen). I connected Google Analytics to the website through Google tags and added the keys to the environment. Unsurprisingly, It didn’t work from the first try. I spent more time trying to troubleshoot the error, reading articles, debugging, and attempting to understand it. Somehow, I emerged victorious.
+
+# Deploying
+
+When everything seemed finished, when all tasks were done, when all hope was counting on that last “yarn build”, then the error came. But this was no ordinary error, this was different. It was a Contentlayer error. For context, I’ve started working on the website on a Linux environment then switched back to Windows.
+
+When it seemed like everything was finished, all tasks completed, and all hope hinged on that final "yarn build", an error appeared. This was not an ordinary error, it was a Contentlayer error. For context, I started working on the website on a Linux environment before switching back to Windows.
+
+`Error: Only URLs with a scheme in: file, data, and node are supported by the default ESM loader. On Windows, absolute paths must be valid file:// URLs. Received protocol 'c:'`
+
+Understanding where the problem originated and creating a workaround took significantly more time than it was supposed to. Apparently, some features of Contentlayer aren't optimized for Windows, which caused consistent build failures. The error was misleading, making me look through the absolute files even when they were working just fine before. I searched the Internet, consulted with my dear friends named ChatGPT and Gemini, and even asked the StackOverflow community, risking banishment and disgust for asking such a puerile question. However, nothing seemed to help! I attempted to rewrite the RSS and post-build files and modify the Contentlayer and Next configuration files, but to no avail. Just when I was on the brink of despair, the last build attempt mysteriously succeeded. Vercel deployed it correctly and, at last, the ordeal was over. After months of postponement and delays, the website was successfully published on the web. Now, I could finally rest.
+
+# Conclusion
+
+Reflecting on it, the project took significantly longer than initially anticipated. There's always something new to learn and a better solution to discover. The key is to select a technology stack that suits your needs and to keep it as straightforward as possible initially, adding more features later, much like a minimum viable product (MVP). Avoid getting overwhelmed by options and all the latest technologies, or your project may never come to see the light of day.
+
+There's really no need to always use the latest framework or code everything from scratch. Sometimes, a WordPress site fits the bill perfectly and could save you a considerable amount of time. Sometimes, a Shopify store will be way cheaper and way more efficient than a custom website. For me though, building the website on Next.js offered a great chance to develop and test my web development skills . Even though I could have completed it way faster and spent less of my time on minor details details that don’t actually matter, it was a fun experience, although a frustrating one. I overshot the deadline by a week due to the unexpected errors. However, in programming, one must always be prepared for the unexpected.
+
+![Light Theme](/static/posts/theme1.png)
+![Dark Theme](/static/posts/theme2.png)
