@@ -7,7 +7,7 @@ const siteMetadata = {
   language: 'en-us',
   theme: 'light', // system, dark or light
   siteUrl: 'https://www.cosmingombos.com/',
-  siteRepo: 'https://github.com/gombosc/tailwind-css-starter-blog.git',
+  siteRepo: 'https://github.com/gombosc/My-Website/',
   siteLogo: '/static/logo/6.png',
   socialBanner: '/static/logo/social.jpg',
   email: 'cosmingombos@gmail.com',
