@@ -1,6 +1,6 @@
 /** @type {import("pliny/config").PlinyConfig } */
 const siteMetadata = {
-  title: 'The Cosmin Gombos Blog',
+  title: '',
   author: 'Cosmin Gombos',
   headerTitle: 'The Cosmin Gombos Blog',
   description: 'A digital space for my projects, thoughts and ideas.',
