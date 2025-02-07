@@ -1,12 +1,12 @@
 /** @type {import("pliny/config").PlinyConfig } */
 const siteMetadata = {
-  title: '',
+  title: 'The Cosmin Gombos Blog',
   author: 'Cosmin Gombos',
-  headerTitle: '',
-  description: 'A digital space for my projects,thoughts and ideas.',
+  headerTitle: 'The Cosmin Gombos Blog',
+  description: 'A digital space for my projects, thoughts and ideas.',
   language: 'en-us',
   theme: 'light', // system, dark or light
-  siteUrl: 'https://tailwind-nextjs-starter-blog.vercel.app',
+  siteUrl: 'https://www.cosmingombos.com/',
   siteRepo: 'https://github.com/gombosc/tailwind-css-starter-blog.git',
   siteLogo: '/static/logo/6.png',
   socialBanner: '/static/logo/social.jpg',
