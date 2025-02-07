@@ -9,7 +9,7 @@ const siteMetadata = {
   siteUrl: 'https://tailwind-nextjs-starter-blog.vercel.app',
   siteRepo: 'https://github.com/gombosc/tailwind-css-starter-blog.git',
   siteLogo: '/static/logo/6.png',
-  socialBanner: '/static/images/twitter-card.png',
+  socialBanner: '/static/logo/social.jpg',
   email: 'cosmingombos@gmail.com',
   github: 'https://github.com/gombosc',
   linkedin: 'https://www.linkedin.com/in/cosmin-gombos/',
