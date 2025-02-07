@@ -1,8 +1,8 @@
 /** @type {import("pliny/config").PlinyConfig } */
 const siteMetadata = {
-  title: '',
+  title: 'The Cosmin Gombos Blog',
   author: 'Cosmin Gombos',
-  headerTitle: 'The Cosmin Gombos Blog',
+  headerTitle: '',
   description: 'A digital space for my projects, thoughts and ideas.',
   language: 'en-us',
   theme: 'light', // system, dark or light
