@@ -2,7 +2,7 @@
 
 This is my personal website created as a medium for my projects and articles.
 
-Initial Template used: <a href="https://vercel.com/templates/next.js/tailwind-css-starter-blog">Tailwind CSS Blog</a> by Timothy Lin
+Initial Template used: Tailwind CSS Blog by Timothy Lin
 
 Main Inspiration: <a href="https://www.dalelarroder.com/">Dale Larroder Website</a>
 
