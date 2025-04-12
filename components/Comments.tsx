@@ -24,43 +24,47 @@ interface CommentsConfig {
 
 export default function Comments({ slug }: { slug: string }) {
   const [loadComments, setLoadComments] = useState(false)
-  const [loaded, setLoaded] = useState(false)
   
   useEffect(() => {
-    // Only load script after button is clicked
-    if (!loadComments || loaded) return
+    // Only run this effect when the button is clicked
+    if (!loadComments) return;
     
-    const commentsConfig = siteMetadata.comments as CommentsConfig
-    const { giscusConfig } = commentsConfig
+    // Clean up any existing giscus elements
+    const existingScript = document.querySelector('script[src="https://giscus.app/client.js"]');
+    if (existingScript) {
+      existingScript.remove();
+    }
     
-    // Load the giscus script
-    const script = document.createElement('script')
-    script.src = 'https://giscus.app/client.js'
-    script.setAttribute('data-repo', giscusConfig.repo)
-    script.setAttribute('data-repo-id', giscusConfig.repositoryId)
-    script.setAttribute('data-category', giscusConfig.category)
-    script.setAttribute('data-category-id', giscusConfig.categoryId)
-    script.setAttribute('data-mapping', giscusConfig.mapping)
-    script.setAttribute('data-reactions-enabled', giscusConfig.reactions)
-    script.setAttribute('data-emit-metadata', giscusConfig.metadata)
-    script.setAttribute('data-theme', giscusConfig.theme)
-    script.setAttribute('data-lang', giscusConfig.lang)
-    script.setAttribute('crossorigin', 'anonymous')
-    script.async = true
-
-    const commentsDiv = document.getElementById('giscus-comments')
+    // Create and append the script
+    const script = document.createElement('script');
+    script.src = 'https://giscus.app/client.js';
+    script.setAttribute('data-repo', 'gombosc/My-Website');
+    script.setAttribute('data-repo-id', 'R_kgDOLPQM1A');
+    script.setAttribute('data-category', 'General');
+    script.setAttribute('data-category-id', 'DIC_kwDOLPQM1M4CfybQ');
+    script.setAttribute('data-mapping', 'pathname');
+    script.setAttribute('data-strict', '0');
+    script.setAttribute('data-reactions-enabled', '1');
+    script.setAttribute('data-emit-metadata', '0');
+    script.setAttribute('data-input-position', 'bottom');
+    script.setAttribute('data-theme', 'light');
+    script.setAttribute('data-lang', 'en');
+    script.setAttribute('data-loading', 'lazy');
+    script.setAttribute('crossorigin', 'anonymous');
+    script.async = true;
+    
+    const commentsDiv = document.getElementById('giscus-comments');
     if (commentsDiv) {
-      commentsDiv.appendChild(script)
-      setLoaded(true)
+      commentsDiv.appendChild(script);
     }
     
+    // Clean up function
     return () => {
-      // Clean up - remove the script when component is unmounted
-      if (commentsDiv && commentsDiv.contains(script)) {
-        commentsDiv.removeChild(script)
+      if (existingScript) {
+        existingScript.remove();
       }
-    }
-  }, [loadComments, loaded])
+    };
+  }, [loadComments]);
   
   return (
     <>
@@ -72,7 +76,7 @@ export default function Comments({ slug }: { slug: string }) {
           Load Comments
         </button>
       )}
-      {loadComments && <div id="giscus-comments" className="mt-4"></div>}
+      <div id="giscus-comments" className="mt-4 giscus"></div>
     </>
   )
 }
