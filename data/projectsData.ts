@@ -14,14 +14,14 @@ const projectsData: Project[] = [
   },
   {
     title: 'Robot Control Interface - Built On Next.js With Typescript / Tailwind',
-    description: 'Built an experimental interface using Next.js to explore web-based robot control capabilities, testing technologies like WebSockets for real-time communication, gRPC for efficient service calls, WebRTC for streaming video feeds, and ROS (Robot Operating System) coupled with Gazebo for robot simulation and control. This was meant as a testing ground for evaluating different approaches to remote robotics interaction.',
+    description: 'Built an experimental interface using Next.js to explore web-based robot control capabilities, testing technologies like WebSockets for real-time communication, gRPC for efficient service calls, WebRTC for streaming video feeds, and ROS (Robot Operating System) coupled with Gazebo for robot simulation and control.',
     imgSrc: '/static/images/robot.png',
     href: 'https://github.com/gombosc/robot_interface',
   },
   {
     title: 'CoHaven - Flutter Mobile Application Demo',
-    description: `A personal project built with Flutter and Flutter Flow, created from scratch. It envolved wireframing, UI/UX design, Flutter development, API's and Supabase for backend. Currently not live. `,
-    imgSrc: '/static/images/cohaven.jpg',
+    description: `A project built with Flutter and Flutter Flow, created from scratch. It envolved wireframing, UI/UX design, Flutter development, API's and Supabase for backend. Currently not live. `,
+    imgSrc: '/static/images/cohaven.png',
     href: 'https://www.cosmingombos.com',
   },
   {
