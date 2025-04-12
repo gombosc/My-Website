@@ -9,14 +9,14 @@ const projectsData: Project[] = [
   {
     title: 'Football Teams - Flutter Demo',
     description: `A two pages demo application created with Flutter Flow as an exercise for a company, rendering information from an API and optimized for edge cases and a smooth experience. Built with the following Flutter packages: dio, riverpod, flutter_hooks, go_router, easy_localization.`,
-    imgSrc: '/static/images/mywebsite.png',
-    href: 'https://www.cosmingombos.com',
+    imgSrc: '/static/images/clubs.png',
+    href: 'https://github.com/gombosc/club_app_demo',
   },
   {
     title: 'Robot Control Interface - Built On Next.js With Typescript / Tailwind',
     description: 'Built an experimental interface using Next.js to explore web-based robot control capabilities, testing technologies like WebSockets for real-time communication, gRPC for efficient service calls, WebRTC for streaming video feeds, and ROS (Robot Operating System) coupled with Gazebo for robot simulation and control. This was meant as a testing ground for evaluating different approaches to remote robotics interaction.',
-    imgSrc: '/static/images/cohaven.jpg',
-    href: 'https://www.cosmingombos.com',
+    imgSrc: '/static/images/robot.png',
+    href: 'https://github.com/gombosc/robot_interface',
   },
   {
     title: 'CoHaven - Flutter Mobile Application Demo',
