@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { useTheme } from 'next-themes'
 import siteMetadata from '@/data/siteMetadata.mjs'
 
 interface GiscusConfig {
@@ -24,6 +25,7 @@ interface CommentsConfig {
 
 export default function Comments({ slug }: { slug: string }) {
   const [loadComments, setLoadComments] = useState(false)
+  const { theme, resolvedTheme } = useTheme()
   
   useEffect(() => {
     // Only run this effect when the button is clicked
@@ -34,6 +36,11 @@ export default function Comments({ slug }: { slug: string }) {
     if (existingScript) {
       existingScript.remove();
     }
+    
+    // Determine theme based on the current website theme
+    const giscusTheme = theme === 'dark' || resolvedTheme === 'dark' 
+      ? 'transparent_dark'  // Use dark theme when website is in dark mode
+      : 'light';            // Use light theme when website is in light mode
     
     // Create and append the script
     const script = document.createElement('script');
@@ -47,7 +54,7 @@ export default function Comments({ slug }: { slug: string }) {
     script.setAttribute('data-reactions-enabled', '1');
     script.setAttribute('data-emit-metadata', '0');
     script.setAttribute('data-input-position', 'bottom');
-    script.setAttribute('data-theme', 'light');
+    script.setAttribute('data-theme', giscusTheme);
     script.setAttribute('data-lang', 'en');
     script.setAttribute('data-loading', 'lazy');
     script.setAttribute('crossorigin', 'anonymous');
@@ -64,7 +71,24 @@ export default function Comments({ slug }: { slug: string }) {
         existingScript.remove();
       }
     };
-  }, [loadComments]);
+  }, [loadComments, theme, resolvedTheme]);
+  
+  // Listen for theme changes and reload comments if they're already loaded
+  useEffect(() => {
+    // Skip if comments aren't loaded yet
+    if (!loadComments) return;
+    
+    // Get the existing giscus iframe
+    const iframe = document.querySelector<HTMLIFrameElement>('.giscus-frame');
+    if (!iframe) return;
+    
+    // Send message to giscus to update theme
+    const giscusTheme = theme === 'dark' || resolvedTheme === 'dark' ? 'transparent_dark' : 'light';
+    iframe.contentWindow?.postMessage(
+      { giscus: { setConfig: { theme: giscusTheme } } },
+      'https://giscus.app'
+    );
+  }, [theme, resolvedTheme, loadComments]);
   
   return (
     <>
