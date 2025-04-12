@@ -7,6 +7,24 @@ interface Project {
 
 const projectsData: Project[] = [
   {
+    title: 'Football Teams - Flutter Demo',
+    description: `A two pages demo application created with Flutter Flow as an exercise for a company, rendering information from an API and optimized for edge cases and a smooth experience. Built with the following Flutter packages: dio, riverpod, flutter_hooks, go_router, easy_localization.`,
+    imgSrc: '/static/images/mywebsite.png',
+    href: 'https://www.cosmingombos.com',
+  },
+  {
+    title: 'Robot Control Interface - Built On Next.js With Typescript / Tailwind',
+    description: 'Built an experimental interface using Next.js to explore web-based robot control capabilities, testing technologies like WebSockets for real-time communication, gRPC for efficient service calls, WebRTC for streaming video feeds, and ROS (Robot Operating System) coupled with Gazebo for robot simulation and control. This was meant as a testing ground for evaluating different approaches to remote robotics interaction.',
+    imgSrc: '/static/images/cohaven.jpg',
+    href: 'https://www.cosmingombos.com',
+  },
+  {
+    title: 'CoHaven - Flutter Mobile Application Demo',
+    description: `A personal project built with Flutter and Flutter Flow, created from scratch. It envolved wireframing, UI/UX design, Flutter development, API's and Supabase for backend. Currently not live. `,
+    imgSrc: '/static/images/cohaven.jpg',
+    href: 'https://www.cosmingombos.com',
+  },
+  {
     title: 'Personal Website',
     description: `Created with NextJS, Tailwind CSS, and TypeScript. This website is a personal project that I built to showcase my work and share my thoughts.`,
     imgSrc: '/static/images/mywebsite.png',
