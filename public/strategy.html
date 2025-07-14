@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Decade of Disruption: A Strategic Outlook (2025-2035)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0F172A;
+            color: #E2E8F0;
+        }
+        #background-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 640px) {
+            .chart-container {
+                height: 350px;
+                max-height: 450px;
+            }
+        }
+        @media (min-width: 1024px) {
+            .chart-container {
+                height: 400px;
+                max-height: 500px;
+            }
+        }
+        .kpi-value {
+            font-weight: 900;
+            color: #38BDF8;
+            line-height: 1;
+        }
+        .section-title {
+            font-weight: 800;
+            color: #F1F5F9;
+        }
+        .flowchart-item {
+            border: 2px solid #38BDF8;
+            background-color: #1E293B;
+        }
+        .flowchart-arrow {
+            color: #38BDF8;
+            font-weight: bold;
+        }
+        #gemini-output ul {
+            list-style-position: inside;
+            list-style-type: disc;
+        }
+        #gemini-output li {
+            margin-bottom: 0.75rem;
+        }
+        .content-card {
+            background-color: rgba(30, 41, 59, 0.9);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(51, 65, 85, 0.5);
+            color: #CBD5E1;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <canvas id="background-canvas"></canvas>
+
+    <div class="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8 relative z-10">
+
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-6xl font-black text-slate-100 leading-tight">The Decade of Disruption</h1>
+            <p class="mt-4 text-lg md:text-xl text-slate-300 max-w-4xl mx-auto">A data-driven outlook on the global industries and workforce transformations shaping our world from 2025 to 2035.</p>
+        </header>
+
+        <main class="space-y-16">
+            
+            <section id="macro-drivers">
+                <h2 class="text-3xl section-title text-center mb-8">Five Macro-Drivers of Global Change</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+                    <div class="content-card p-6 rounded-lg shadow-lg text-center">
+                        <div class="text-5xl mb-3">🚀</div>
+                        <h3 class="font-bold text-lg text-slate-200">Technological Acceleration</h3>
+                        <p class="text-sm text-slate-400 mt-2">The bio-digital nexus of AI, quantum, and biotech is creating a new engine for productivity and innovation.</p>
+                    </div>
+                    <div class="content-card p-6 rounded-lg shadow-lg text-center">
+                        <div class="text-5xl mb-3">🌿</div>
+                        <h3 class="font-bold text-lg text-slate-200">Green Transition</h3>
+                        <p class="text-sm text-slate-400 mt-2">A policy-driven pivot to renewables and circular economies is reshaping capital allocation and resource geopolitics.</p>
+                    </div>
+                    <div class="content-card p-6 rounded-lg shadow-lg text-center">
+                        <div class="text-5xl mb-3">🌍</div>
+                        <h3 class="font-bold text-lg text-slate-200">Demographic Shifts</h3>
+                        <p class="text-sm text-slate-400 mt-2">A great divergence between aging developed nations and youthful emerging economies is altering global talent pools.</p>
+                    </div>
+                    <div class="content-card p-6 rounded-lg shadow-lg text-center">
+                        <div class="text-5xl mb-3">🔗</div>
+                        <h3 class="font-bold text-lg text-slate-200">Supply Chain Fragmentation</h3>
+                        <p class="text-sm text-slate-400 mt-2">A move from hyper-globalization to regional blocs prioritizes resilience over pure cost efficiency for critical goods.</p>
+                    </div>
+                    <div class="content-card p-6 rounded-lg shadow-lg text-center">
+                        <div class="text-5xl mb-3">💰</div>
+                        <h3 class="font-bold text-lg text-slate-200">Economic Pressures</h3>
+                        <p class="text-sm text-slate-400 mt-2">The long-term effects of inflation, high interest rates, and sovereign debt are favoring capital-efficient models.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="growth-industries">
+                <div class="content-card p-6 sm:p-8 rounded-lg shadow-2xl">
+                    <h2 class="text-3xl section-title text-center mb-2">The Multi-Trillion Dollar Shift: Top 10 Growth Industries</h2>
+                    <p class="text-center text-slate-300 mb-8 max-w-3xl mx-auto">The next decade will see explosive growth in technology and sustainability-focused sectors. This chart compares the projected market size of the ten most critical industries by 2035, highlighting the immense economic transformation underway.</p>
+                    <div class="chart-container h-[500px] max-h-[600px] md:h-[600px] md:max-h-[700px]">
+                        <canvas id="growthIndustriesChart"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <section id="gemini-assistant">
+                <div class="content-card p-6 sm:p-8 rounded-lg shadow-2xl">
+                    <h2 class="text-3xl section-title text-center mb-2">✨ Strategic Foresight Assistant</h2>
+                    <p class="text-center text-slate-300 mb-8 max-w-3xl mx-auto">Select a macro-driver and a stakeholder group to generate tailored strategic recommendations using the Gemini API. Explore actionable insights for navigating the decade of disruption.</p>
+                    
+                    <div class="max-w-2xl mx-auto">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                            <div>
+                                <label for="macro-driver-select" class="block text-sm font-medium text-slate-300">Macro-Driver</label>
+                                <select id="macro-driver-select" class="mt-1 block w-full pl-3 pr-10 py-2 text-base bg-slate-700 border-slate-600 text-white focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm rounded-md">
+                                    <option>Technological Acceleration</option>
+                                    <option>Green Transition</option>
+                                    <option>Demographic Shifts</option>
+                                    <option>Supply Chain Fragmentation</option>
+                                    <option>Economic Pressures</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="stakeholder-select" class="block text-sm font-medium text-slate-300">Stakeholder</label>
+                                <select id="stakeholder-select" class="mt-1 block w-full pl-3 pr-10 py-2 text-base bg-slate-700 border-slate-600 text-white focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm rounded-md">
+                                    <option>Individuals</option>
+                                    <option>Corporations</option>
+                                    <option>Policymakers</option>
+                                    <option>Educators</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button id="generate-advice-btn" class="w-full bg-sky-600 text-white font-bold py-3 px-4 rounded-md hover:bg-sky-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-slate-800 focus:ring-sky-500 transition-colors duration-300">
+                            ✨ Generate Strategic Advice
+                        </button>
+
+                        <div id="gemini-output-container" class="mt-6 p-6 bg-slate-800 rounded-lg border border-slate-700 min-h-[150px]">
+                            <div id="gemini-output">
+                                <p class="text-slate-400 text-center">Your personalized strategic recommendations will appear here.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="ai-deep-dive">
+                <h2 class="text-3xl section-title text-center mb-8">Deep Dive: The AI Revolution</h2>
+                <div class="grid grid-cols-1 lg:grid-cols-5 gap-8">
+                    <div class="lg:col-span-3 content-card p-6 rounded-lg shadow-lg">
+                        <h3 class="text-xl font-bold text-slate-200 text-center mb-2">The Exponential Rise of Artificial Intelligence</h3>
+                        <p class="text-center text-slate-400 mb-6 text-sm">AI is not just an industry; it's the foundational technology of the era. Its market value is projected to grow over 19-fold, transforming from a specialized field into a general-purpose utility powering every other sector.</p>
+                        <div class="chart-container h-80 max-h-80">
+                            <canvas id="aiMarketGrowthChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-2 content-card p-6 rounded-lg shadow-lg flex flex-col justify-center">
+                         <h3 class="text-xl font-bold text-slate-200 text-center mb-4">AI's Core Components</h3>
+                         <p class="text-center text-slate-400 mb-6 text-sm">The AI ecosystem is diverse. While Machine Learning forms the core, the foundational hardware and transformative power of Natural Language Processing are key drivers of growth.</p>
+                        <div class="chart-container h-64 max-h-64">
+                            <canvas id="aiSubSectorsChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="labor-market">
+                <h2 class="text-3xl section-title text-center mb-8">The Evolving Labor Market: A Workforce in Transition</h2>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div class="content-card p-6 rounded-lg shadow-lg">
+                        <h3 class="text-xl font-bold text-slate-200 text-center mb-4">Structural Job Churn (2025-2030)</h3>
+                        <p class="text-center text-slate-400 mb-6 text-sm">Nearly a quarter of all jobs will be structurally transformed. While many roles will be displaced by automation, an even greater number of new roles will be created, demanding a massive global reskilling effort.</p>
+                        <div class="chart-container h-64 max-h-72">
+                            <canvas id="jobChurnChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="content-card p-6 rounded-lg shadow-lg">
+                        <h3 class="text-xl font-bold text-slate-200 text-center mb-4">The New Skillset Imperative</h3>
+                        <p class="text-center text-slate-400 mb-6 text-sm">Success in 2035 depends on a T-shaped portfolio: deep technical expertise complemented by uniquely human skills that AI cannot replicate. Collaboration, creativity, and analytical thought are the new currency.</p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-semibold text-center text-sky-400">In-Demand Hard Skills</h4>
+                                <ul class="mt-3 space-y-2 text-sm text-slate-300">
+                                    <li class="flex items-center"><span class="mr-2 text-sky-500">💻</span>AI & ML Frameworks</li>
+                                    <li class="flex items-center"><span class="mr-2 text-sky-500">🧬</span>CRISPR & Biotech Protocols</li>
+                                    <li class="flex items-center"><span class="mr-2 text-sky-500">🤖</span>Robotics & PLC Programming</li>
+                                    <li class="flex items-center"><span class="mr-2 text-sky-500">☁️</span>Cloud Security Engineering</li>
+                                    <li class="flex items-center"><span class="mr-2 text-sky-500">📊</span>Data & Lifecycle Analysis</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-center text-teal-400">Essential Soft Skills</h4>
+                                <ul class="mt-3 space-y-2 text-sm text-slate-300">
+                                    <li class="flex items-center"><span class="mr-2 text-teal-500">🤔</span>Analytical & Critical Thinking</li>
+                                    <li class="flex items-center"><span class="mr-2 text-teal-500">🎨</span>Creativity & Originality</li>
+                                    <li class="flex items-center"><span class="mr-2 text-teal-500">🤝</span>Leadership & Social Influence</li>
+                                    <li class="flex items-center"><span class="mr-2 text-teal-500">🏃</span>Resilience, Flexibility & Agility</li>
+                                    <li class="flex items-center"><span class="mr-2 text-teal-500">🧠</span>Emotional Intelligence</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="symbiosis">
+                <div class="content-card p-6 sm:p-8 rounded-lg shadow-2xl">
+                    <h2 class="text-3xl section-title text-center mb-2">The Symbiotic Revolutions</h2>
+                    <p class="text-center text-slate-300 mb-8 max-w-3xl mx-auto">The green and digital transitions are not separate phenomena; they are inextricably linked. Technological advancements are essential to achieving sustainability goals, creating a powerful feedback loop of innovation and investment.</p>
+                    <div class="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-4">
+                        <div class="flowchart-item p-4 rounded-lg text-center w-full md:w-1/4">
+                            <h4 class="font-bold text-slate-100">Digital Tech</h4>
+                            <p class="text-xs text-slate-300">AI, Digital Twins, IoT, Biotech</p>
+                        </div>
+                        <div class="flowchart-arrow text-4xl transform md:-rotate-0 rotate-90">→</div>
+                        <div class="text-center w-full md:w-1/2">
+                            <div class="flowchart-item p-3 rounded-lg mb-2 text-slate-100">AI-Powered Smart Grids</div>
+                            <div class="flowchart-item p-3 rounded-lg mb-2 text-slate-100">Digital Twins for Energy Optimization</div>
+                             <div class="flowchart-item p-3 rounded-lg text-slate-100">Bio-Manufacturing for Circular Materials</div>
+                        </div>
+                        <div class="flowchart-arrow text-4xl transform md:-rotate-0 rotate-90">→</div>
+                        <div class="flowchart-item p-4 rounded-lg text-center w-full md:w-1/4">
+                             <h4 class="font-bold text-slate-100">Green Outcomes</h4>
+                            <p class="text-xs text-slate-300">Decarbonization, Resource Efficiency, Sustainability</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="recommendations">
+                <h2 class="text-3xl section-title text-center mb-8">Strategic Imperatives for a Disruptive Decade</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="content-card p-6 rounded-lg shadow-lg">
+                        <h3 class="font-bold text-lg text-slate-200 mb-3">For Individuals</h3>
+                        <ul class="space-y-2 text-sm text-slate-400 list-disc list-inside">
+                            <li>Embrace radical lifelong learning.</li>
+                            <li>Develop a "T-shaped" skill portfolio.</li>
+                            <li>Prioritize uniquely human, creative skills.</li>
+                            <li>Build and manage your career as a portfolio.</li>
+                        </ul>
+                    </div>
+                     <div class="content-card p-6 rounded-lg shadow-lg">
+                        <h3 class="font-bold text-lg text-slate-200 mb-3">For Corporations</h3>
+                        <ul class="space-y-2 text-sm text-slate-400 list-disc list-inside">
+                            <li>Redesign work for human-AI augmentation.</li>
+                            <li>Adopt a skills-based talent strategy.</li>
+                            <li>Foster a "learn-it-all" culture of curiosity.</li>
+                            <li>Implement responsible AI governance.</li>
+                        </ul>
+                    </div>
+                     <div class="content-card p-6 rounded-lg shadow-lg">
+                        <h3 class="font-bold text-lg text-slate-200 mb-3">For Policymakers</h3>
+                        <ul class="space-y-2 text-sm text-slate-400 list-disc list-inside">
+                            <li>Modernize social safety nets for a fluid workforce.</li>
+                            <li>Catalyze strategic innovation ecosystems.</li>
+                            <li>Co-invest in mass public-private reskilling.</li>
+                            <li>Develop agile, forward-looking regulations.</li>
+                        </ul>
+                    </div>
+                     <div class="content-card p-6 rounded-lg shadow-lg">
+                        <h3 class="font-bold text-lg text-slate-200 mb-3">For Educators</h3>
+                        <ul class="space-y-2 text-sm text-slate-400 list-disc list-inside">
+                            <li>Radically reform curricula for future-ready skills.</li>
+                            <li>Integrate industry-aligned, experiential learning.</li>
+                            <li>Champion interdisciplinary studies.</li>
+                            <li>Re-invent as hubs for lifelong learning.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="text-center mt-16 pt-8 border-t border-slate-700">
+            <p class="text-sm text-slate-400">This infographic synthesizes data and insights from the "Decade of Disruption" report. All projections are based on cited sources and represent a primary forecast as of July 2025.</p>
+            <p class="text-xs text-slate-500 mt-2">Generated by Canvas Infographics. Neither Mermaid JS nor SVG were used in this output.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            const CHART_DEFAULTS = {
+                color: '#CBD5E1',
+                borderColor: '#475569',
+                font: {
+                    family: "'Inter', sans-serif"
+                }
+            };
+            Chart.defaults.color = CHART_DEFAULTS.color;
+            Chart.defaults.borderColor = CHART_DEFAULTS.borderColor;
+            Chart.defaults.font.family = CHART_DEFAULTS.font.family;
+
+            const CHART_COLORS = {
+                blue: '#3B82F6',
+                lightBlue: '#60A5FA',
+                extraLightBlue: '#93C5FD',
+                sky: '#0EA5E9',
+                slate: '#64748B'
+            };
+
+            const PALETTE = ['#0EA5E9', '#0284C7', '#0369A1', '#38BDF8', '#7DD3FC', '#BAE6FD', '#475569', '#64748B', '#94A3B8', '#CBD5E1'];
+
+            const wrapLabel = (str, maxWidth = 16) => {
+                if (str.length <= maxWidth) {
+                    return str;
+                }
+                const words = str.split(' ');
+                const lines = [];
+                let currentLine = '';
+                for (const word of words) {
+                    if ((currentLine + ' ' + word).length > maxWidth && currentLine.length > 0) {
+                        lines.push(currentLine);
+                        currentLine = word;
+                    } else {
+                        if (currentLine.length > 0) {
+                            currentLine += ' ' + word;
+                        } else {
+                            currentLine = word;
+                        }
+                    }
+                }
+                lines.push(currentLine);
+                return lines;
+            };
+
+            const multiLineTooltipTitle = {
+                plugins: {
+                    tooltip: {
+                        backgroundColor: '#0F172A',
+                        titleColor: '#F1F5F9',
+                        bodyColor: '#CBD5E1',
+                        borderColor: '#334155',
+                        borderWidth: 1,
+                        padding: 10,
+                        callbacks: {
+                            title: function(tooltipItems) {
+                                const item = tooltipItems[0];
+                                let label = item.chart.data.labels[item.dataIndex];
+                                if (Array.isArray(label)) {
+                                  return label.join(' ');
+                                } else {
+                                  return label;
+                                }
+                            }
+                        }
+                    }
+                }
+            };
+            
+            const growthIndustriesCtx = document.getElementById('growthIndustriesChart').getContext('2d');
+            new Chart(growthIndustriesCtx, {
+                type: 'bar',
+                data: {
+                    labels: [
+                        wrapLabel('Artificial Intelligence & ML'),
+                        wrapLabel('Telehealth & Digital Health'),
+                        wrapLabel('Biotechnology'),
+                        wrapLabel('Renewable Energy'),
+                        wrapLabel('E-Commerce (U.S.)'),
+                        wrapLabel('The Space Economy'),
+                        wrapLabel('Cybersecurity'),
+                        wrapLabel('Advanced Mfg. & Robotics'),
+                        wrapLabel('Industrial Metaverse'),
+                        wrapLabel('Circular Economy (Digital)'),
+                    ],
+                    datasets: [{
+                        label: 'Projected 2035 Market Size ($ Trillion)',
+                        data: [5.26, 3.92, 5.40, 5.11, 25.6, 1.80, 0.697, 0.376, 0.150, 0.0254],
+                        backgroundColor: PALETTE,
+                        borderColor: PALETTE.map(color => color + 'B3'),
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    ...multiLineTooltipTitle,
+                    indexAxis: 'y',
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        ...multiLineTooltipTitle.plugins,
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                             ...multiLineTooltipTitle.plugins.tooltip,
+                            callbacks: {
+                                ...multiLineTooltipTitle.plugins.tooltip.callbacks,
+                                label: function(context) {
+                                    let label = context.dataset.label || '';
+                                    if (label) {
+                                        label += ': ';
+                                    }
+                                    if (context.parsed.x !== null) {
+                                        if(context.raw > 20) {
+                                             label += '$' + context.parsed.x.toFixed(1) + ' Trillion (Note: Anomalously high projection based on source)';
+                                        } else {
+                                             label += '$' + context.parsed.x.toFixed(2) + ' Trillion';
+                                        }
+                                       
+                                    }
+                                    return label;
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Market Size in Trillions (USD)'
+                            },
+                            grid: {
+                                color: CHART_DEFAULTS.borderColor
+                            }
+                        },
+                        y: {
+                            ticks: {
+                                autoSkip: false
+                            },
+                            grid: {
+                                color: CHART_DEFAULTS.borderColor
+                            }
+                        }
+                    }
+                }
+            });
+
+            const aiMarketGrowthCtx = document.getElementById('aiMarketGrowthChart').getContext('2d');
+            new Chart(aiMarketGrowthCtx, {
+                type: 'line',
+                data: {
+                    labels: ['2025', '2027', '2029', '2031', '2033', '2035'],
+                    datasets: [{
+                        label: 'AI Market Size ($ Trillion)',
+                        data: [0.274, 0.65, 1.3, 2.4, 3.9, 5.26],
+                        fill: true,
+                        backgroundColor: 'rgba(14, 165, 233, 0.2)',
+                        borderColor: CHART_COLORS.sky,
+                        tension: 0.4
+                    }]
+                },
+                options: {
+                    ...multiLineTooltipTitle,
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        ...multiLineTooltipTitle.plugins,
+                        legend: { display: false },
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Market Size in Trillions (USD)'
+                            },
+                            grid: {
+                                color: CHART_DEFAULTS.borderColor
+                            }
+                        },
+                        x: {
+                             grid: {
+                                color: CHART_DEFAULTS.borderColor
+                            }
+                        }
+                    }
+                }
+            });
+
+            const aiSubSectorsCtx = document.getElementById('aiSubSectorsChart').getContext('2d');
+            new Chart(aiSubSectorsCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['AI Infrastructure (Hardware)', 'Machine Learning / Deep Learning', 'Natural Language Processing (NLP)', 'Computer Vision', 'Other Applications'],
+                    datasets: [{
+                        label: 'AI Sub-Sectors',
+                        data: [35, 30, 20, 10, 5],
+                        backgroundColor: [
+                            CHART_COLORS.sky,
+                            '#0284C7',
+                            '#0369A1',
+                            '#38BDF8',
+                            CHART_COLORS.slate
+                        ],
+                        hoverOffset: 4,
+                        borderColor: '#0F172A'
+                    }]
+                },
+                options: {
+                    ...multiLineTooltipTitle,
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                         ...multiLineTooltipTitle.plugins,
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                color: CHART_DEFAULTS.color,
+                                boxWidth: 15,
+                                padding: 15
+                            }
+                        }
+                    }
+                }
+            });
+            
+            const jobChurnCtx = document.getElementById('jobChurnChart').getContext('2d');
+            new Chart(jobChurnCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Remaining Jobs', 'New Jobs Created', 'Jobs Displaced'],
+                    datasets: [{
+                        data: [78, 13.5, 8.5], 
+                        backgroundColor: [
+                            '#64748B',
+                            CHART_COLORS.sky,
+                            '#F43F5E' 
+                        ],
+                        hoverOffset: 4,
+                        borderColor: '#0F172A'
+                    }]
+                },
+                options: {
+                     ...multiLineTooltipTitle,
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    cutout: '60%',
+                    plugins: {
+                        ...multiLineTooltipTitle.plugins,
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                color: CHART_DEFAULTS.color
+                            }
+                        },
+                        tooltip: {
+                            ...multiLineTooltipTitle.plugins.tooltip,
+                            callbacks: {
+                                ...multiLineTooltipTitle.plugins.tooltip.callbacks,
+                                label: function(context) {
+                                    let label = context.label || '';
+                                    if (label) {
+                                        label += ': ';
+                                    }
+                                    const value = context.raw;
+                                    label += value + '% of total jobs';
+                                    return label;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+            const generateBtn = document.getElementById('generate-advice-btn');
+            const outputDiv = document.getElementById('gemini-output');
+            const driverSelect = document.getElementById('macro-driver-select');
+            const stakeholderSelect = document.getElementById('stakeholder-select');
+
+            generateBtn.addEventListener('click', async () => {
+                const driver = driverSelect.value;
+                const stakeholder = stakeholderSelect.value;
+                const prompt = `Acting as a senior strategic foresight analyst and economic researcher, provide 3 concise, actionable, and insightful strategic recommendations for '${stakeholder}' who are navigating the impacts of the '${driver}' macro-driver over the next decade (2025-2035). The tone should be analytical, objective, and forward-looking. Format the output as a simple unordered list.`;
+                outputDiv.innerHTML = '<p class="text-slate-400 text-center animate-pulse">✨ Generating insights with Gemini...</p>';
+                generateBtn.disabled = true;
+                generateBtn.classList.add('opacity-50', 'cursor-not-allowed');
+                try {
+                    let chatHistory = [{ role: "user", parts: [{ text: prompt }] }];
+                    const payload = { contents: chatHistory };
+                    const apiKey = ""; 
+                    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+                    if (!response.ok) {
+                        throw new Error(`API request failed with status ${response.status}`);
+                    }
+                    const result = await response.json();
+                    if (result.candidates && result.candidates.length > 0 &&
+                        result.candidates[0].content && result.candidates[0].content.parts &&
+                        result.candidates[0].content.parts.length > 0) {
+                        let text = result.candidates[0].content.parts[0].text;
+                        text = text.replace(/\*/g, '');
+                        const listItems = text.split('\n').filter(item => item.trim() !== '');
+                        let html = '<ul class="text-slate-300">';
+                        listItems.forEach(item => {
+                            html += `<li>${item}</li>`;
+                        });
+                        html += '</ul>';
+                        outputDiv.innerHTML = html;
+                    } else {
+                        throw new Error("Received an invalid response structure from the API.");
+                    }
+                } catch (error) {
+                    console.error("Gemini API Error:", error);
+                    outputDiv.innerHTML = `<p class="text-red-400 text-center">Sorry, an error occurred while generating advice. Please try again. <br><small>${error.message}</small></p>`;
+                } finally {
+                    generateBtn.disabled = false;
+                    generateBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+                }
+            });
+
+            // Animated background
+            const canvas = document.getElementById('background-canvas');
+            const ctx = canvas.getContext('2d');
+            let particles = [];
+            const particleCount = 100;
+            const connectDistance = 100;
+
+            function setCanvasSize() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+
+            class Particle {
+                constructor() {
+                    this.x = Math.random() * canvas.width;
+                    this.y = Math.random() * canvas.height;
+                    this.vx = (Math.random() - 0.5) * 0.5;
+                    this.vy = (Math.random() - 0.5) * 0.5;
+                    this.radius = Math.random() * 1.5 + 1;
+                }
+                update() {
+                    this.x += this.vx;
+                    this.y += this.vy;
+                    if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+                    if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+                }
+                draw() {
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                    ctx.fillStyle = 'rgba(14, 165, 233, 0.6)';
+                    ctx.fill();
+                }
+            }
+
+            function initParticles() {
+                particles = [];
+                for (let i = 0; i < particleCount; i++) {
+                    particles.push(new Particle());
+                }
+            }
+
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                particles.forEach(p => {
+                    p.update();
+                    p.draw();
+                });
+                connectParticles();
+                requestAnimationFrame(animate);
+            }
+
+            function connectParticles() {
+                for (let i = 0; i < particles.length; i++) {
+                    for (let j = i + 1; j < particles.length; j++) {
+                        const dx = particles[i].x - particles[j].x;
+                        const dy = particles[i].y - particles[j].y;
+                        const distance = Math.sqrt(dx * dx + dy * dy);
+                        if (distance < connectDistance) {
+                            ctx.beginPath();
+                            ctx.moveTo(particles[i].x, particles[i].y);
+                            ctx.lineTo(particles[j].x, particles[j].y);
+                            ctx.strokeStyle = `rgba(14, 165, 233, ${1 - distance / connectDistance})`;
+                            ctx.lineWidth = 0.5;
+                            ctx.stroke();
+                        }
+                    }
+                }
+            }
+
+            window.addEventListener('resize', () => {
+                setCanvasSize();
+                initParticles();
+            });
+
+            setCanvasSize();
+            initParticles();
+            animate();
+        });
+    </script>
+
+</body>
+</html>
